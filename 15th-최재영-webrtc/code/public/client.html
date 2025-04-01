@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebRTC Publish & Subscribe</title>
+</head>
+<body>
+  <h2>WebRTC Publish & Subscribe</h2>
+  
+  <!-- Publisher Section -->
+  <section id="publisherSection">
+    <h3>Publisher</h3>
+    <select id="mediaTypeSelect">
+      <option value="camera">카메라</option>
+      <option value="screen">화면 공유</option>
+    </select>
+    <button id="publishButton">송출</button>
+    <p id="pubIdDisplay"></p>
+    <video id="pubVideo" autoplay playsinline></video>
+  </section>
+  
+  <!-- Subscriber Section -->
+  <section id="subscriberSection">
+    <h3>Subscriber</h3>
+    <input type="text" id="pubIdInput" placeholder="Publisher ID">
+    <button id="connectButton">연결</button>
+    <p id="connectionStatus"></p>
+    <video id="subVideo" autoplay playsinline></video>
+  </section>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
